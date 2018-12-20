@@ -1,0 +1,25 @@
+{
+	"name": "@simpleview/mochalib",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"dependencies": {
+		"jsvalidator": "1.1.0"
+	},
+	"devDependencies" : {
+		"mocha" : "5.2.0"
+	},
+	"scripts": {
+		"test": "mocha testing/index.test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/simpleviewinc/sv-npm-mochalib.git"
+	},
+	"author": "owenallenaz@gmail.com",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/simpleviewinc/sv-npm-mochalib/issues"
+	},
+	"homepage": "https://github.com/simpleviewinc/sv-npm-mochalib#readme"
+}
