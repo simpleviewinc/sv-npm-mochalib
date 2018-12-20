@@ -9,7 +9,7 @@ npm install @simpleview/mochalib
 ```
 
 ```
-const mochaLib = require("@simpleview/mochaLib");
+const mochaLib = require("@simpleview/mochalib");
 ```
 
 ## Overview
@@ -81,7 +81,7 @@ The more complicated the test, the more savings you get by utilizing a test arra
 Basic Example
 
 ```js
-const mochaLib = require("@simpleview/mochaLib");
+const mochaLib = require("@simpleview/mochalib");
 const assert = require("assert");
 
 describe(__filename, function() {
