@@ -1,7 +1,7 @@
 {
 	"name": "@simpleview/mochalib",
-	"version": "1.0.0",
-	"description": "",
+	"version": "1.0.1",
+	"description": "Mocha helpers to help make common tasks easier.",
 	"main": "index.js",
 	"dependencies": {
 		"jsvalidator": "1.1.0"

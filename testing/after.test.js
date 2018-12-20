@@ -5,7 +5,7 @@ describe(__filename, function() {
 	var tests = [
 		{
 			name : "after",
-			defer : () => ({
+			args : () => ({
 				p : setTimeout(() => {
 					
 				}, 30000)

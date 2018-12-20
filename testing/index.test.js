@@ -6,20 +6,26 @@ describe(__filename, function() {
 	describe("success", function() {
 		var tests = [
 			{
-				name : "simple sync defer",
-				defer : () => ({
+				name : "object",
+				args : {
+					arg : "foo"
+				}
+			},
+			{
+				name : "simple sync args",
+				args : () => ({
 					arg: "foo"
 				})
 			},
 			{
-				name : "async defer",
-				defer : async () => ({
+				name : "async args",
+				args : async () => ({
 					arg : "foo"
 				})
 			},
 			{
 				name : "promise defer off event loop",
-				defer : () => {
+				args : () => {
 					var p = new Promise((resolve) => {
 						setImmediate(function() {
 							resolve({ arg : "foo" });
@@ -34,7 +40,7 @@ describe(__filename, function() {
 				before : (test) => {
 					test.arg = "foo";
 				},
-				defer : () => ({
+				args : () => ({
 					
 				})
 			},
@@ -43,13 +49,13 @@ describe(__filename, function() {
 				before : async (test) => {
 					test.arg = "foo";
 				},
-				defer : () => ({
+				args : () => ({
 					
 				})
 			},
 			{
 				name : "with after statement",
-				defer : () => ({
+				args : () => ({
 					arg : "foo"
 				}),
 				after : (test) => {
@@ -59,12 +65,19 @@ describe(__filename, function() {
 			{
 				name : "with timeout",
 				timeout : 10000,
-				defer : async () => {
+				args : async () => {
 					return new Promise((resolve) => {
 						setTimeout(() => {
 							resolve({ arg : "foo" });
 						}, 3000);
 					});
+				}
+			},
+			{
+				name : "should skip",
+				skip : true,
+				args : () => {
+					throw new Error("Didn't skip");
 				}
 			}
 		]
@@ -74,9 +87,36 @@ describe(__filename, function() {
 		});
 	});
 	
-	it("should handle after statement", function(done) {
-		child_process.exec(`${__dirname}/../node_modules/.bin/mocha ${__dirname}/after.test.js`, function(err) {
-			return done();
+	describe("externals", function(done) {
+		const tests = [
+			{
+				name : "after",
+				args : {
+					file : "after.test.js"
+				}
+			},
+			{
+				name : "example",
+				args : {
+					file : "example.test.js"
+				}
+			},
+			{
+				name : "only",
+				args : {
+					file : "only.test.js"
+				}
+			}
+		]
+		
+		mochaLib.testArray(tests, async function(test) {
+			return new Promise((resolve, reject) => {
+				child_process.exec(`${__dirname}/../node_modules/.bin/mocha ${__dirname}/${test.file}`, function(err) {
+					assert.ifError(err);
+					
+					return resolve();
+				});
+			});
 		});
 	});
 });

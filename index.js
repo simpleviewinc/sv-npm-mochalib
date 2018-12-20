@@ -20,7 +20,7 @@ define(function(require, exports, module) {
 					{ name : "after", type : "function" },
 					{ name : "only", type : "boolean", default : false },
 					{ name : "skip", type : "boolean", default : false },
-					{ name : "defer", type : "function", required : true }
+					{ name : "args", type : "any", required : true }
 				],
 				throwOnInvalid : true
 			});
@@ -30,7 +30,7 @@ define(function(require, exports, module) {
 					this.timeout(val.timeout);
 				}
 				
-				var test = await val.defer();
+				var test = val.args instanceof Function ? await val.args() : val.args;
 				
 				if (val.before !== undefined) {
 					await val.before(test);
