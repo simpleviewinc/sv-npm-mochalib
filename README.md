@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/simpleviewinc/sv-npm-assertlib.svg?branch=master)](https://travis-ci.org/simpleviewinc/sv-npm-assertlib)
+[![Build Status](https://travis-ci.org/simpleviewinc/sv-npm-mochalib.svg?branch=master)](https://travis-ci.org/simpleviewinc/sv-npm-mochalib)
 
 # @simpleview/mochalib
 
