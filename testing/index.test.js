@@ -1,6 +1,6 @@
 const assert = require("assert");
 const child_process = require("child_process");
-const mochaLib = require("../index.js");
+const mochaLib = require("../src/index.js");
 
 describe(__filename, function() {
 	describe("success", function() {

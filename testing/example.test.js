@@ -1,4 +1,4 @@
-const mochaLib = require("../index");
+const mochaLib = require("../src/index");
 const assert = require("assert");
 
 describe(__filename, function() {

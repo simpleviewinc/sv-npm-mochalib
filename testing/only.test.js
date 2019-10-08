@@ -1,5 +1,5 @@
 const assert = require("assert");
-const mochaLib = require("../index.js");
+const mochaLib = require("../src/index.js");
 
 describe(__filename, function() {
 	var tests = [

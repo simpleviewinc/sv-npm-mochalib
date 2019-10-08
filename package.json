@@ -2,7 +2,7 @@
 	"name": "@simpleview/mochalib",
 	"version": "1.0.1",
 	"description": "Mocha helpers to help make common tasks easier.",
-	"main": "index.js",
+	"main": "src/index.js",
 	"dependencies": {
 		"jsvalidator": "1.1.0"
 	},
@@ -10,7 +10,9 @@
 		"mocha": "5.2.0"
 	},
 	"scripts": {
-		"test": "mocha testing/index.test.js"
+		"test": "mocha testing/index.test.js",
+		"docker": "./dev/build && ./dev/run || true",
+		"publish": "./dev/publish"
 	},
 	"repository": {
 		"type": "git",
