@@ -37,23 +37,23 @@ const tests = [
 	{
 		name : "should fill with string",
 		args : {
-			data : "foo"
-		},
-		result : "foo"
+			data : "foo",
+			result : "foo"
+		}
 	},
 	{
 		name : "should fill with boolean",
 		args : {
-			data : true
-		},
-		result : "true"
+			data : true,
+			result : "true"
+		}
 	},
 	{
 		name : "should fill with number",
 		args : {
-			data : 10
-		},
-		result : "10"
+			data : 10,
+			result : "10"
+		}
 	}
 ]
 
@@ -68,7 +68,7 @@ The more complicated the test, the more savings you get by utilizing a test arra
 
 ### testArray(args, fn)
 
-* args - `object`
+* args - `array`
 	* `name` - `string` - Test name
 	* `timeout` - `number` - Set a timeout in ms for this specific test.
 	* `before` - `function` or `async function` - Execute a function prior to execution of the test. Executed as `await before(args)`.
