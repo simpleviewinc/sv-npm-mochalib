@@ -37,23 +37,23 @@ const tests = [
 	{
 		name : "should fill with string",
 		args : {
-			data : "foo"
-		},
-		result : "foo"
+			data : "foo",
+			result : "foo"
+		}
 	},
 	{
 		name : "should fill with boolean",
 		args : {
-			data : true
-		},
-		result : "true"
+			data : true,
+			result : "true"
+		}
 	},
 	{
 		name : "should fill with number",
 		args : {
-			data : 10
-		},
-		result : "10"
+			data : 10,
+			result : "10"
+		}
 	}
 ]
 
@@ -66,9 +66,9 @@ The more complicated the test, the more savings you get by utilizing a test arra
 
 ## API
 
-### testArray(args, fn)
+### testArray(tests, fn)
 
-* args - `object`
+* tests - `object[]`
 	* `name` - `string` - Test name
 	* `timeout` - `number` - Set a timeout in ms for this specific test.
 	* `before` - `function` or `async function` - Execute a function prior to execution of the test. Executed as `await before(args)`.
@@ -76,7 +76,7 @@ The more complicated the test, the more savings you get by utilizing a test arra
 	* `only` - `boolean` - Only execute this test.
 	* `skip` - `boolean` - Skip this test.
 	* `args` - `object` or `function` or `async function` - Definition of the test data which will be passed to the `fn`. Can be an object of data, or a function, or an async function.
-* fn - `function` or `async function` - Executed as `await fn(args)`, receives the test args returned on `args`. If you utilize a non-async function, it must return a promise if you go off the event loop.
+* fn - `function(test)` or `async function(test)` - Receives the test args returned on `test`. If you utilize a non-async function, it must return a promise if you go off the event loop.
 
 Basic Example
 
@@ -100,6 +100,24 @@ describe(__filename, function() {
 					num : 2,
 					result : 4
 				}
+			},
+			{
+				name : "test 3",
+				// returning the args from a function
+				args : () => {
+					return {
+						num : 3,
+						result : 6
+					}
+				}
+			},
+			{
+				// return args from an async function with shorthand notation
+				name : "test 4",
+				args : async () => ({
+					num : 4,
+					result : 8
+				})
 			}
 		]
 		
