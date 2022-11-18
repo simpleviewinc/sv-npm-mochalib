@@ -120,8 +120,65 @@ describe(__filename, function() {
 				})
 			}
 		]
-		
+
 		mochaLib.testArray(tests, function(test) {
+			assert.strictEqual(test.num * 2, test.result);
+		});
+	});
+});
+```
+
+Using with Typescript
+
+```typescript
+import { testArray, TestDef } from "@simpleview/mochalib";
+import assert from "assert";
+
+describe(__filename, function() {
+	describe("test array", function() {
+		interface Test {
+			num: number
+			result: number
+		}
+
+		// ensures type-checking on your test array
+		const tests: TestDef<Test>[] = [
+			{
+				name : "test 1",
+				args : {
+					num : 1,
+					result : 2
+				}
+			},
+			{
+				name : "test 2",
+				args : {
+					num : 2,
+					result : 4
+				}
+			},
+			{
+				name : "test 3",
+				// returning the args from a function
+				args : () => {
+					return {
+						num : 3,
+						result : 6
+					}
+				}
+			},
+			{
+				// return args from an async function with shorthand notation
+				name : "test 4",
+				args : async () => ({
+					num : 4,
+					result : 8
+				})
+			}
+		]
+
+		testArray<Test>(tests, function(test) {
+			// now test is strictly typed
 			assert.strictEqual(test.num * 2, test.result);
 		});
 	});
