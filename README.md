@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/simpleviewinc/sv-npm-mochalib.svg?branch=master)](https://travis-ci.org/simpleviewinc/sv-npm-mochalib)
-
 # @simpleview/mochalib
 
 ## Getting Started
