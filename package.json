@@ -35,7 +35,7 @@
 		"style": "eslint .",
 		"style:fix": "eslint . --fix",
 		"sync-state": "bash ./src/scripts/sync-state",
-		"test": "ts-mocha --paths './src/testing/index.test.ts' --timeout 5000",
+		"test": "ts-mocha --paths './src/testing/index.test.ts' --timeout 10000",
 		"types": "tsc -p tsconfig.json --noEmit"
 	},
 	"repository": {

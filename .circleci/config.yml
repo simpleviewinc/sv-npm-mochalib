@@ -28,5 +28,5 @@ jobs:
       - run:
           name: Build
           command: |
-            docker compose build node
-            docker compose run --rm node yarn test
+            docker compose build node_ci
+            docker compose run --rm node_ci yarn test

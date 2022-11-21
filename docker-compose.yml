@@ -12,3 +12,7 @@ services:
       - "./.eslintrc.json:/app/.eslintrc.json"
       - "./src:/app/src"
       - "./dist:/app/dist"
+  node_ci:
+    build: "."
+    image: sv-npm-mochalib:local
+
