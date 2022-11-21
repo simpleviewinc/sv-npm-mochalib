@@ -9,6 +9,9 @@
 			"require": "./dist/cjs/index.js"
 		}
 	},
+	"files": [
+		"dist"
+	],
 	"devDependencies": {
 		"@simpleview/eslint-config-dms": "0.0.6",
 		"@tsconfig/node16": "1.0.3",
