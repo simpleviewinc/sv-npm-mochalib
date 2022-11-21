@@ -1,6 +1,6 @@
 {
 	"name": "@simpleview/mochalib",
-	"version": "1.0.2",
+	"version": "2.0.0",
 	"description": "Mocha helpers to help make common tasks easier.",
 	"exports": {
 		".": {
