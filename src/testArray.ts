@@ -1,4 +1,4 @@
-export type HookFn<T> = (test: T) => (void | Promise<void>)
+export type HookFn<T> = (test: T) => (any | Promise<any>)
 
 export interface TestDef<T = any>{
 	name: string

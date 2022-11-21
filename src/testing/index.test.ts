@@ -51,19 +51,33 @@ describe(__filename, function() {
 				before: (test) => {
 					test.arg = "foo";
 				},
-				//@ts-expect-error - complains that arg isn't defined
 				args: () => ({
-
+					arg: "bar"
 				})
+			},
+			{
+				name: "with before statement and after statement that returns",
+				before: async (test) => {
+					test.arg += "o";
+
+					return "valid";
+				},
+				after: async (test) => {
+					// ensures test.arg is properly typed
+					const t: string = test.arg;
+					return t;
+				},
+				args: {
+					arg: "fo"
+				}
 			},
 			{
 				name: "with before async statement",
 				before: async (test) => {
 					test.arg = "foo";
 				},
-				//@ts-expect-error - complains that arg isn't defined
 				args: () => ({
-
+					arg: "bar"
 				})
 			},
 			{
