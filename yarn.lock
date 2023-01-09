@@ -142,7 +142,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@simpleview/mochalib@1.0.2, @simpleview/mochalib@workspace:.":
+"@simpleview/mochalib@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@simpleview/mochalib@npm:1.0.2"
+  dependencies:
+    jsvalidator: 1.1.0
+  checksum: 0570227d7010ef46eda1093763b07ec8778fa727e4344b94ca76b0b463979cea750b5a8b3a74324dbfe4e0a735e8a04f35a31b80895d7451c4f4ca27ac5c56d3
+  languageName: node
+  linkType: hard
+
+"@simpleview/mochalib@workspace:.":
   version: 0.0.0-use.local
   resolution: "@simpleview/mochalib@workspace:."
   dependencies:
@@ -1814,13 +1823,20 @@ __metadata:
   linkType: hard
 
 "json5@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "json5@npm:1.0.1"
+  version: 1.0.2
+  resolution: "json5@npm:1.0.2"
   dependencies:
     minimist: ^1.2.0
   bin:
     json5: lib/cli.js
-  checksum: e76ea23dbb8fc1348c143da628134a98adf4c5a4e8ea2adaa74a80c455fc2cdf0e2e13e6398ef819bfe92306b610ebb2002668ed9fc1af386d593691ef346fc3
+  checksum: 866458a8c58a95a49bef3adba929c625e82532bcff1fe93f01d29cb02cac7c3fe1f4b79951b7792c2da9de0b32871a8401a6e3c5b36778ad852bf5b8a61165d7
+  languageName: node
+  linkType: hard
+
+"jsvalidator@npm:1.1.0":
+  version: 1.1.0
+  resolution: "jsvalidator@npm:1.1.0"
+  checksum: c2d788f1867cb9bda7e067ccbe85403e99861176c43fe5439bfa608a4f15945e3b059e42bebdddda8d9c206ad98cb79bd71de202f79d357b70e7b7ac31092191
   languageName: node
   linkType: hard
 
@@ -3057,11 +3073,11 @@ __metadata:
 
 "typescript@patch:typescript@4.8.3#~builtin<compat/typescript>":
   version: 4.8.3
-  resolution: "typescript@patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=a1c5e5"
+  resolution: "typescript@patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=7ad353"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 2222d2382fb3146089b1d27ce2b55e9d1f99cc64118f1aba75809b693b856c5d3c324f052f60c75b577947fc538bc1c27bad0eb76cbdba9a63a253489504ba7e
+  checksum: 0404a09c625df01934ef774b45ce1ca57ccae41cd625fcdbb82056715320d9329e70d9d75c2c732ec6ef947444ca978c189a332b71fa21f5c1437d5a83e24906
   languageName: node
   linkType: hard
 
