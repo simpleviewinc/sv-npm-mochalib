@@ -142,7 +142,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@simpleview/mochalib@1.0.2, @simpleview/mochalib@workspace:.":
+"@simpleview/mochalib@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@simpleview/mochalib@npm:1.0.2"
+  dependencies:
+    jsvalidator: 1.1.0
+  checksum: 0570227d7010ef46eda1093763b07ec8778fa727e4344b94ca76b0b463979cea750b5a8b3a74324dbfe4e0a735e8a04f35a31b80895d7451c4f4ca27ac5c56d3
+  languageName: node
+  linkType: hard
+
+"@simpleview/mochalib@workspace:.":
   version: 0.0.0-use.local
   resolution: "@simpleview/mochalib@workspace:."
   dependencies:
@@ -1490,9 +1499,9 @@ __metadata:
   linkType: hard
 
 "http-cache-semantics@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "http-cache-semantics@npm:4.1.0"
-  checksum: 974de94a81c5474be07f269f9fd8383e92ebb5a448208223bfb39e172a9dbc26feff250192ecc23b9593b3f92098e010406b0f24bd4d588d631f80214648ed42
+  version: 4.1.1
+  resolution: "http-cache-semantics@npm:4.1.1"
+  checksum: 83ac0bc60b17a3a36f9953e7be55e5c8f41acc61b22583060e8dedc9dd5e3607c823a88d0926f9150e571f90946835c7fe150732801010845c72cd8bbff1a236
   languageName: node
   linkType: hard
 
@@ -1821,6 +1830,13 @@ __metadata:
   bin:
     json5: lib/cli.js
   checksum: e76ea23dbb8fc1348c143da628134a98adf4c5a4e8ea2adaa74a80c455fc2cdf0e2e13e6398ef819bfe92306b610ebb2002668ed9fc1af386d593691ef346fc3
+  languageName: node
+  linkType: hard
+
+"jsvalidator@npm:1.1.0":
+  version: 1.1.0
+  resolution: "jsvalidator@npm:1.1.0"
+  checksum: c2d788f1867cb9bda7e067ccbe85403e99861176c43fe5439bfa608a4f15945e3b059e42bebdddda8d9c206ad98cb79bd71de202f79d357b70e7b7ac31092191
   languageName: node
   linkType: hard
 
@@ -3057,11 +3073,11 @@ __metadata:
 
 "typescript@patch:typescript@4.8.3#~builtin<compat/typescript>":
   version: 4.8.3
-  resolution: "typescript@patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=a1c5e5"
+  resolution: "typescript@patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=7ad353"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 2222d2382fb3146089b1d27ce2b55e9d1f99cc64118f1aba75809b693b856c5d3c324f052f60c75b577947fc538bc1c27bad0eb76cbdba9a63a253489504ba7e
+  checksum: 0404a09c625df01934ef774b45ce1ca57ccae41cd625fcdbb82056715320d9329e70d9d75c2c732ec6ef947444ca978c189a332b71fa21f5c1437d5a83e24906
   languageName: node
   linkType: hard
 
