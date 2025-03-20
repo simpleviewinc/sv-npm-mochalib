@@ -17,7 +17,7 @@ export interface TestFn<T = any> {
 /**
  * Execute an array of tests using the same runner to execute each test
  */
-export default function testArray<T = any>(tests: TestDef[], fn: TestFn<T>) {
+export default function testArray<T = any>(tests: TestDef<T>[], fn: TestFn<T>) {
 	tests.forEach(function(test, i) {
 		const testFn = test.skip ? it.skip : test.only ? it.only : it;
 
