@@ -1,6 +1,6 @@
 export type HookFn<T> = (test: T) => (any | Promise<any>)
 
-export interface TestDef<T = any>{
+export interface TestDef<T = any> {
 	name: string
 	timeout?: number
 	before?: HookFn<T>
@@ -14,10 +14,12 @@ export interface TestFn<T = any> {
 	(test: T): any | Promise<any>
 }
 
+type ResolvedArgs<T> = T extends () => any ? Awaited<ReturnType<T>> : T
+
 /**
  * Execute an array of tests using the same runner to execute each test
  */
-export default function testArray<T = any>(tests: TestDef[], fn: TestFn<T>) {
+export default function testArray<T extends TestDef>(tests: T[], fn: TestFn<ResolvedArgs<T["args"]>>) {
 	tests.forEach(function(test, i) {
 		const testFn = test.skip ? it.skip : test.only ? it.only : it;
 
