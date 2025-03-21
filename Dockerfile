@@ -1,18 +1,19 @@
-FROM node:16.17.0
+FROM node:20.13.1
 
 # install desired version of yarn
-RUN corepack enable && yarn set version 3.2.1
+RUN corepack enable && corepack prepare yarn@4.2.2 --activate
 
 COPY package.json /app/package.json
 COPY .yarn /app/.yarn
 COPY yarn.lock /app/yarn.lock
+COPY .yarnrc.yml /app/.yarnrc.yml
 RUN cd /app && yarn install
 
 COPY tsconfig.json /app/tsconfig.json
 COPY tsconfig.cjs.json /app/tsconfig.cjs.json
 COPY tsconfig.esm.json /app/tsconfig.esm.json
 COPY tsconfig.types.json /app/tsconfig.types.json
-COPY .eslintrc.json /app/.eslintrc.json
+COPY eslint.config.mjs /app/eslint.config.mjs
 
 COPY src /app/src
 

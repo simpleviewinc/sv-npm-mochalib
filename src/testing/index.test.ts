@@ -143,7 +143,7 @@ describe(__filename, function() {
 		]
 
 		testArray(tests, async function(test) {
-			const fn = () => execP(`ts-mocha --paths '${__dirname}/${test.file}'`).catch((e) => { throw new Error(e.stdout) });
+			const fn = () => execP(`mocha --require ts-node/register '${__dirname}/${test.file}'`).catch((e) => { throw new Error(e.stdout) });
 
 			if (test.error !== undefined) {
 				return await rejects(fn, test.error)

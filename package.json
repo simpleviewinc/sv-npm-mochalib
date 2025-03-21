@@ -13,20 +13,17 @@
 		"dist"
 	],
 	"devDependencies": {
-		"@simpleview/eslint-config-dms": "0.0.6",
-		"@tsconfig/node16": "1.0.3",
+		"@simpleview/eslint-config-dms": "2.0.3",
+		"@tsconfig/node20": "20.1.4",
 		"@types/mocha": "10.0.0",
 		"@types/node": "18.11.9",
 		"@typescript-eslint/eslint-plugin": "5.39.0",
 		"@typescript-eslint/parser": "5.39.0",
-		"eslint": "8.12.0",
-		"eslint-plugin-react": "7.31.1",
-		"eslint-plugin-react-hooks": "4.6.0",
+		"eslint": "9.12.0",
 		"mocha": "10.1.0",
-		"ts-mocha": "10.0.0",
-		"ts-node": "10.9.1",
+		"ts-node": "10.9.2",
 		"ts-node-dev": "2.0.0",
-		"typescript": "4.8.3"
+		"typescript": "5.4.5"
 	},
 	"scripts": {
 		"build": "yarn run build:cjs && yarn run build:esm && yarn run build:types",
@@ -38,7 +35,7 @@
 		"style": "eslint .",
 		"style:fix": "eslint . --fix",
 		"sync-state": "bash ./src/scripts/sync-state",
-		"test": "ts-mocha --paths './src/testing/index.test.ts' --timeout 10000",
+		"test": "mocha --require ts-node/register './src/testing/index.test.ts' --timeout 10000",
 		"types": "tsc -p tsconfig.json --noEmit"
 	},
 	"repository": {
@@ -51,6 +48,6 @@
 		"url": "https://github.com/simpleviewinc/sv-npm-mochalib/issues"
 	},
 	"homepage": "https://github.com/simpleviewinc/sv-npm-mochalib#readme",
-	"packageManager": "yarn@3.2.1",
+	"packageManager": "yarn@4.2.2+sha512.c44e283c54e02de9d1da8687025b030078c1b9648d2895a65aab8e64225bfb7becba87e1809fc0b4b6778bbd47a1e2ab6ac647de4c5e383a53a7c17db6c3ff4b",
 	"sideEffects": false
 }
