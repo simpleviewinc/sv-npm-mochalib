@@ -117,6 +117,39 @@ describe(__filename, function() {
 		});
 	});
 
+	describe("untyped array", function() {
+		const tests = [
+			{
+				name: "obj",
+				args: {
+					foo: "fooValue"
+				}
+			},
+			{
+				name: "function",
+				args: () => {
+					return {
+						foo: "fooValue",
+						bar: "barValue"
+					}
+				}
+			},
+			{
+				name: "async function",
+				args: async () => {
+					return {
+						foo: "fooValue",
+						baz: "bazValue"
+					}
+				}
+			}
+		]
+
+		testArray(tests, async function(test) {
+			strictEqual(true, true);
+		});
+	});
+
 	describe("externals", function() {
 		this.timeout(5000);
 
