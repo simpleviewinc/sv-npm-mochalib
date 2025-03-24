@@ -5,7 +5,6 @@
 	"exports": {
 		".": {
 			"types": "./dist/types/index.d.ts",
-			"import": "./dist/esm/index.js",
 			"require": "./dist/cjs/index.js"
 		}
 	},
@@ -26,11 +25,12 @@
 		"typescript": "5.4.5"
 	},
 	"scripts": {
-		"build": "yarn run build:cjs && yarn run build:esm && yarn run build:types",
+		"build": "yarn run build:cjs && yarn run build:types",
 		"build:esm": "rm -rf ./dist/esm && tsc --project ./tsconfig.esm.json",
 		"build:cjs": "rm -rf ./dist/cjs && tsc --project ./tsconfig.cjs.json",
 		"build:types": "rm -rf ./dist/types && tsc --project ./tsconfig.types.json",
 		"docker": "./src/scripts/run || true",
+		"install:host": "npm install -f --package-lock false",
 		"publish": "./src/scripts/publish",
 		"style": "eslint .",
 		"style:fix": "eslint . --fix",
