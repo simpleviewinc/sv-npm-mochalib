@@ -5,7 +5,8 @@
 	"exports": {
 		".": {
 			"types": "./dist/types/index.d.ts",
-			"require": "./dist/cjs/index.js"
+			"require": "./dist/cjs/index.js",
+			"import": "./dist/esm/index.js"
 		}
 	},
 	"files": [
@@ -25,7 +26,7 @@
 		"typescript": "5.4.5"
 	},
 	"scripts": {
-		"build": "yarn run build:cjs && yarn run build:types",
+		"build": "yarn run build:cjs && yarn run build:esm && yarn run build:types",
 		"build:esm": "rm -rf ./dist/esm && tsc --project ./tsconfig.esm.json",
 		"build:cjs": "rm -rf ./dist/cjs && tsc --project ./tsconfig.cjs.json",
 		"build:types": "rm -rf ./dist/types && tsc --project ./tsconfig.types.json",
